@@ -160,15 +160,15 @@ public class Listeners implements Listener {
                 break;
             case VINE:
                 break;
-            case STATIONARY_WATER:
+            case LEGACY_STATIONARY_WATER:
                 break;
             case WATER:
                 break;
-            case STATIONARY_LAVA:
+            case LEGACY_STATIONARY_LAVA:
                 break;
             case LAVA:
                 break;
-            case WATER_LILY:
+            case LEGACY_WATER_LILY:
                 break;
             default:
                 return;
@@ -179,19 +179,19 @@ public class Listeners implements Listener {
                 return;
             case REDSTONE_WIRE:
                 return;
-            case DIODE_BLOCK_ON:
+            case LEGACY_DIODE_BLOCK_ON:
                 return;
-            case REDSTONE_LAMP_ON:
+            case LEGACY_REDSTONE_LAMP_ON:
                 return;
             case POWERED_RAIL:
                 return;
-            case REDSTONE_TORCH_ON:
+            case LEGACY_REDSTONE_TORCH_ON:
                 return;
-            case DIODE_BLOCK_OFF:
+            case LEGACY_DIODE_BLOCK_OFF:
                 return;
-            case REDSTONE_LAMP_OFF:
+            case LEGACY_REDSTONE_LAMP_OFF:
                 return;
-            case REDSTONE_TORCH_OFF:
+            case LEGACY_REDSTONE_TORCH_OFF:
                 return;
             default:
                 break;

@@ -1,6 +1,7 @@
 package net.digiex.magiccarpet;
 
 import static java.lang.Math.abs;
+import static org.bukkit.Bukkit.createBlockData;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
@@ -53,7 +54,8 @@ public class Carpet {
 
         void set(final Block bl, final Material material, final byte data) {
             bl.setMetadata("Carpet", new FixedMetadataValue(plugin, who.getUniqueId()));
-            bl.setTypeIdAndData(material.getId(), data, false);
+            // Depricated Removes - bl.setTypeIdAndData(material.getId(), data, false);
+            bl.setBlockData( Bukkit.getUnsafe().fromLegacy(material, data), false);
         }
 
         boolean shouldGlow() {
@@ -149,7 +151,7 @@ public class Carpet {
             else if (fibre.shouldEnder())
                 fibre.set(bl, Material.ENDER_CHEST);
             else if (fibre.shouldWork())
-                fibre.set(bl, Material.WORKBENCH);
+                fibre.set(bl, Material.LEGACY_WORKBENCH);
             else if (canHaveData(thread))
                 fibre.set(bl, thread, data);
             else
@@ -164,23 +166,23 @@ public class Carpet {
             return true;
         case WATER:
             return canChangeLiquids("water");
-        case STATIONARY_WATER:
+        case LEGACY_STATIONARY_WATER:
             return canChangeLiquids("water");
         case LAVA:
             return canChangeLiquids("lava");
-        case STATIONARY_LAVA:
+        case LEGACY_STATIONARY_LAVA:
             return canChangeLiquids("lava");
         case SNOW:
             return true;
-        case LONG_GRASS:
+        case LEGACY_LONG_GRASS:
             return true;
         case DEAD_BUSH:
             return true;
-        case WATER_LILY:
+        case LEGACY_WATER_LILY:
             return true;
-        case RED_ROSE:
+        case LEGACY_RED_ROSE:
             return true;
-        case YELLOW_FLOWER:
+        case LEGACY_YELLOW_FLOWER:
             return true;
         case BROWN_MUSHROOM:
             return true;
@@ -473,11 +475,11 @@ public class Carpet {
 
     public boolean canHaveData(final Material material) {
         switch (material) {
-        case WOOL:
+        case LEGACY_WOOL:
             return true;
-        case STAINED_GLASS:
+        case LEGACY_STAINED_GLASS:
             return true;
-        case STAINED_CLAY:
+        case LEGACY_STAINED_CLAY:
             return true;
         default:
             return false;
