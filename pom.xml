@@ -8,25 +8,29 @@
     <packaging>jar</packaging>
 
     <name>MagicCarpet</name>
-    <url>https://github.com/Digiex/MagicCarpet</url>
-    <description>A Bukkit Plugin for Minecraft.</description>
+    <url>https://github.com/Parallel-Galaxy/MagicCarpet</url>
+    <description>MagicCarpet Plugin</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-  
+
     <repositories>
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
         </repository>
+        <repository>
+            <id>enginehub-maven</id>
+            <url>http://maven.enginehub.org/repo/</url>
+        </repository>
     </repositories>
-    
+
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/Digiex/MagicCarpet/issues</url>
+        <url>https://github.com/Parallel-Galaxy/MagicCarpet/issues</url>
     </issueManagement>
-  
+
     <dependencies>
         <dependency>
             <groupId>org.bukkit</groupId>
@@ -36,35 +40,29 @@
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>Vault</artifactId>
-            <version>1.5.2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Vault.jar</systemPath>
+            <version>1.7.3</version>
         </dependency>
         <dependency>
-            <groupId>com.sk89q</groupId>
-            <artifactId>worldguard</artifactId>
-            <version>6.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/WorldGuard.jar</systemPath>
+            <groupId>com.sk89q.worldguard</groupId>
+            <artifactId>worldguard-bukkit</artifactId>
+            <version>7.0.0</version>
         </dependency>
         <dependency>
-            <groupId>com.sk89q</groupId>
-            <artifactId>worldedit</artifactId>
-            <version>6.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/WorldEdit.jar</systemPath>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-bukkit</artifactId>
+            <version>7.0.0</version>
         </dependency>
         <dependency>
             <groupId>fr.neatmonster</groupId>
             <artifactId>nocheatplus</artifactId>
-            <version>3.11.1</version>
+            <version>3.15.1</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/NoCheatPlus.jar</systemPath>
         </dependency>
     </dependencies>
-    
+
     <build>
-    	<finalName>MagicCarpet</finalName>
+        <finalName>MagicCarpet</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
