@@ -2,11 +2,17 @@ package net.digiex.magiccarpet.plugins;
 
 import java.util.Set;
 
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.world.World;
+import com.sk89q.worldguard.LocalPlayer;
+import com.sk89q.worldguard.protection.flags.Flags;
+import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import org.bukkit.Location;
 
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.managers.RegionManager;
+import org.bukkit.entity.Player;
 
 /*
  * Magic Carpet 2.4 Copyright (C) 2012-2014 Android, Celtic Minstrel, xzKinGzxBuRnzx
@@ -32,11 +38,14 @@ public class WorldGuard {
         worldGuard = w;
     }
 
-    public static boolean canFlyHere(final Location location) {
+    public static boolean canFlyHere(Player player, final Location location) {
         try {
-            final RegionManager regionManager = worldGuard.getRegionManager(location.getWorld());
-            final ApplicableRegionSet set = regionManager.getApplicableRegions(location);
-            final Set<String> flag = set.getFlag(com.sk89q.worldguard.protection.flags.DefaultFlag.BLOCKED_CMDS);
+            final RegionManager regionManager = com.sk89q.worldguard.WorldGuard.getInstance().getPlatform().getRegionContainer().get((World) location.getWorld());
+            final ApplicableRegionSet set = regionManager.getApplicableRegions(BlockVector3.at(location.getX(), location.getY(), location.getZ()));
+
+            LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
+
+            final Set<String> flag = set.queryValue(localPlayer, Flags.BLOCKED_CMDS);
             for (final String blocked : flag) {
                 if (blocked == null)
                     continue;

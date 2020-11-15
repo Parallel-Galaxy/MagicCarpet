@@ -76,8 +76,8 @@ public final class Permissions {
         return player.hasPermission(p);
     }
 
-    public static boolean canFlyHere(final Location location) {
-        return !Plugins.isWorldGuardEnabled() ? true : WorldGuard.canFlyHere(location);
+    public static boolean canFlyHere(final Player player, final Location location) {
+        return !Plugins.isWorldGuardEnabled() ? true : WorldGuard.canFlyHere(player, location);
     }
 
     public static boolean canFlyAt(final Player player, final Integer size) {

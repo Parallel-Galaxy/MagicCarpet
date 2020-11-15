@@ -1,8 +1,8 @@
 name: MagicCarpet
 main: net.digiex.magiccarpet.MagicCarpet
-version: 2.4.7
+version: 2.4.8
 api-version: 1.13
-website: http://dev.bukkit.org/server-mods/magiccarpet/
+website: https://github.com/Parallel-Galaxy/MagicCarpet/releases
 description: Take yourself wonder by wonder on a carpet made of glass.
 database: false
 load: POSTWORLD

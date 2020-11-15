@@ -141,7 +141,7 @@ public class Carpet {
                 fibre.block = null;
                 continue;
             }
-            if (!Permissions.canFlyHere(bl.getLocation())) {
+            if (!Permissions.canFlyHere(who, bl.getLocation())) {
                 hide("Poof! The magic carpet is not allowed in this area.");
                 return false;
             }

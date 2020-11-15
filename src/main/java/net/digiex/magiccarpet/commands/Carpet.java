@@ -75,7 +75,7 @@ public class Carpet implements CommandExecutor {
                 player.sendMessage("You can only activate the Magic Carpet while on solid ground.");
                 return true;
             }
-            if (!Permissions.canFlyHere(player.getLocation())) {
+            if (!Permissions.canFlyHere(player, player.getLocation())) {
                 player.sendMessage("The magic carpet is not allowed in this area.");
                 return true;
             }
@@ -106,7 +106,7 @@ public class Carpet implements CommandExecutor {
                     player.sendMessage("You can only activate the Magic Carpet while on solid ground.");
                     return true;
                 }
-                if (!Permissions.canFlyHere(player.getLocation())) {
+                if (!Permissions.canFlyHere(player, player.getLocation())) {
                     player.sendMessage("The magic carpet is not allowed in this area.");
                     return true;
                 }
